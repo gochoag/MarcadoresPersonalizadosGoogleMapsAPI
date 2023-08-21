@@ -2,7 +2,14 @@ package com.example.marcadorespersonalizadosgooglemapsapi;
 
 import com.google.android.gms.maps.model.LatLng;
 
-public class PlaceInfo {
+class PlaceInfo {
+    private String name;
+    private LatLng location;
+    private String logoUrl;
+    private String formattedPhoneNumber;
+    private String placeId;
+    private double rating;  // Agregado rating
+
     public String getName() {
         return name;
     }
@@ -27,25 +34,39 @@ public class PlaceInfo {
         this.logoUrl = logoUrl;
     }
 
-    public String getOpeningHours() {
-        return openingHours;
+    public String getFormattedPhoneNumber() {
+        return formattedPhoneNumber;
     }
 
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
+    public void setFormattedPhoneNumber(String formattedPhoneNumber) {
+        this.formattedPhoneNumber = formattedPhoneNumber;
     }
 
-    private String name;
-    private LatLng location;
-    private String logoUrl;
-    private String openingHours;
+    public String getPlaceId() {
+        return placeId;
+    }
 
-    public PlaceInfo(String name, LatLng location, String logoUrl, String openingHours) {
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public PlaceInfo(String name, LatLng location, String logoUrl, String formattedPhoneNumber, String placeId, double rating) {
         this.name = name;
         this.location = location;
         this.logoUrl = logoUrl;
-        this.openingHours = openingHours;
+        this.formattedPhoneNumber = formattedPhoneNumber;
+        this.placeId = placeId;
+        this.rating = rating;
     }
 
+    // Getters y setters
+    public double getRating() {
+        return rating;
+    }
 
+    // Otros getters y setters
 }
